@@ -26,6 +26,10 @@ class Artist {
       $("#nav-artists").show()
 
     })
+    document.getElementById('artists').style.display = ''
+    document.getElementById('sub_genres').style.display = 'none'
+
+    NavBar.update('#nav-sub_genres', '#nav-artists', json.name)
   }
 }
 

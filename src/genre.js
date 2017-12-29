@@ -11,7 +11,6 @@ class Genre {
 
   static displayGenres(json){
     //sort categories? genre.all.sort(function(){})
-
     Genre.all.forEach(function(genre){
       let genreDiv = document.createElement('div')
       genreDiv.class = "genre"

@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 function createListeners() {
-  document.getElementById('create-button').addEventListener('click', Album.search)
+  document.getElementById('search-button').addEventListener('click', Album.search)
   document.getElementById('search-results').addEventListener('click', addAlbumToCollection)
 
-  document.getElementById('create-button').addEventListener('click', Album.search)
+  document.getElementById('search-button').addEventListener('click', Album.search)
   document.getElementById('categories').addEventListener('click', Adapter.getGenres)
   document.getElementById('genres').addEventListener('click', Adapter.getSubGenres)
   document.getElementById('sub_genres').addEventListener('click', Adapter.getArtists)
@@ -22,18 +22,18 @@ function createListeners() {
   document.getElementById('nav-artists').style.display = 'none'
   document.getElementById('nav-albums').style.display = 'none'
 
-  document.getElementById('nav-bar').addEventListener('click', navBar)
+  document.getElementById('nav-bar').addEventListener('click', NavBar.rollBack)
 
   document.getElementById('genres').style.display = 'none'
   document.getElementById('sub_genres').style.display = 'none'
   document.getElementById('artists').style.display = 'none'
   document.getElementById('albums').style.display = 'none'
-  document.getElementById('create').style.display = 'none'
+  document.getElementById('search').style.display = 'none'
 
 
 }
 
-function navBar(event){
+function neil(event){
   event.preventDefault()
   if (event.target.localName === 'a') {
     document.getElementById('categories').style.display = 'none'
@@ -41,22 +41,17 @@ function navBar(event){
     document.getElementById('sub_genres').style.display = 'none'
     document.getElementById('artists').style.display = 'none'
     document.getElementById('albums').style.display = 'none'
-    document.getElementById('create').style.display = 'none'
+    document.getElementById('search').style.display = 'none'
 
 
   switch (event.target.parentElement.id) {
   case 'nav-search':
 
-    document.getElementById('create').style.display = ''
+    document.getElementById('search').style.display = ''
     document.getElementById('nav-genres').style.display = 'none'
-
-
     document.getElementById('nav-sub_genres').style.display = 'none'
-
     document.getElementById('nav-artists').style.display = 'none'
-
     document.getElementById('nav-albums').style.display = 'none'
-
 
     document.getElementById('genres').innerHTML =""
     document.getElementById('sub_genres').innerHTML =""
@@ -66,36 +61,23 @@ function navBar(event){
     SubGenre.all = []
     Artist.all = []
     Album.all = []
-
-
-    //deal with changing active element
     break;
-
   case 'nav-categories':
     document.getElementById('categories').style.display = ''
-
     document.getElementById('nav-genres').style.display = 'none'
-
     document.getElementById('nav-sub_genres').style.display = 'none'
-
     document.getElementById('nav-artists').style.display = 'none'
-
     document.getElementById('nav-albums').style.display = 'none'
-
 
     document.getElementById('genres').innerHTML =""
     document.getElementById('sub_genres').innerHTML =""
     document.getElementById('artists').innerHTML =""
     document.getElementById('albums').innerHTML =""
+
     Genre.all = []
     SubGenre.all = []
     Artist.all = []
     Album.all = []
-
-
-
-
-
     break;
   case 'nav-genres':
     document.getElementById('genres').style.display = ''
@@ -122,8 +104,8 @@ function navBar(event){
 function addAlbumToCollection(event) {
     console.log(event)
 
-    let searchArtist = document.getElementById('create-artist').value
-    let searchAlbum = document.getElementById('create-album').value
+    let searchArtist = document.getElementById('search-artist').value
+    let searchAlbum = document.getElementById('search-album').value
 
 
     myAlbum = new Album(searchArtist, searchAlbum, event.target.dataset.id, event.target.dataset.title, event.target.parentElement.querySelector('img').src, document.getElementById('category-input').value, document.getElementById('genre-input').value, document.getElementById('subgenre-input').value )

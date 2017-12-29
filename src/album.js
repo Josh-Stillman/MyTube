@@ -18,20 +18,13 @@ class Album {
       albumDiv.innerHTML = `<a href="https://www.youtube.com/watch?v=${album.link}" target = "_blank">${album.name}</a>`
 
       document.getElementById('albums').appendChild(albumDiv)
-      document.getElementById('albums').style.display = ''
-      document.getElementById('artists').style.display = 'none'
 
-
-      $("#nav-artists").removeClass("active");
-      $("#nav-albums").addClass("active");
-
-      let aText = document.getElementById('nav-artists').innerText
-      document.getElementById('nav-artists').innerHTML = `<a href="">${aText}</a>`
-
-      document.getElementById('nav-albums').innerHTML = `${json.name}`
-      $("#nav-albums").show()
 
     })
+    document.getElementById('albums').style.display = ''
+    document.getElementById('artists').style.display = 'none'
+
+    NavBar.update('#nav-artists', '#nav-albums', json.name)
   }
 }
 

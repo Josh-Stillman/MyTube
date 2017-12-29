@@ -13,21 +13,11 @@ class SubGenre {
       subGenreDiv.id = sub_genre.id
       subGenreDiv.innerHTML = `<a href="">${sub_genre.name}</a>`
       document.getElementById('sub_genres').appendChild(subGenreDiv)
-      document.getElementById('genres').style.display = 'none'
-      document.getElementById('sub_genres').style.display = ''
-      //create div
-      //append div
-
-      $("#nav-genres").removeClass("active");
-      $("#nav-sub_genres").addClass("active");
-
-      let gText = document.getElementById('nav-genres').innerText
-
-      document.getElementById('nav-genres').innerHTML = `<a href="">${gText}</a>`
-
-      document.getElementById('nav-sub_genres').innerHTML = `${json.name}`
-      $("#nav-sub_genres").show()
     })
+    document.getElementById('genres').style.display = 'none'
+    document.getElementById('sub_genres').style.display = ''
+
+    NavBar.update('#nav-genres', '#nav-sub_genres', json.name)
   }
 }
 
