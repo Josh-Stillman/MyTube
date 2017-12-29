@@ -20,6 +20,12 @@ rock = Category.create(name: "Rock")
 dirtbag = Genre.create(name: "Dirtbag/punk", category: rock)
 postpunk = SubGenre.create(name: "Post-Punk", genre: dirtbag)
 
-wire = Artist.create(name: "Wire", category: rock, genre: dirtbag, subgenre: postpunk)
+wire = Artist.create(name: "Wire", category: rock, genre: dirtbag, sub_genre: postpunk)
 
-pink = Album.create(name: "Pink Flag", link: "tNVdziest58", playcount: 0, artist: wire)
+pink = Album.create(name: "Pink Flag", link: "tNVdziest58", play_count: 0, artist: wire)
+
+newwave = SubGenre.create(name: "New Wave", genre: dirtbag)
+
+nick = Artist.create(name: "Nick Lowe", category: rock, genre: dirtbag, sub_genre: newwave)
+
+labour = Album.create(name: "Labour of Lust", link: "b0l3QWUXVho&list=PL0VQVFM4ctAmhL3jFDdZAbkTFchH-S0PH", play_count: 0, artist: nick)

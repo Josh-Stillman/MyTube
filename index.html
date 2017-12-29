@@ -3,76 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <title>MyTube Albums</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <script src="src/index.js"></script>
   <script src="src/adapter.js"></script>
   <script src="src/album.js"></script>
+  <script src="src/artist.js"></script>
+  <script src="src/sub_genre.js"></script>
+  <script src="src/genre.js"></script>
+  <script src="src/category.js"></script>
+  <script src="src/nav-bar.js"></script>
+  <script src="src/index.js"></script>
+
 
 </head>
 <body>
 
-<div class="Nav-Bar">
+  <nav id="nav-bar" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" id="nav-search"><a href="">Search</a></li>
+      <li class="breadcrumb-item active" id="nav-categories">Categories</li>
+      <li class="breadcrumb-item" id="nav-genres"><a href="">Genres</a></li>
+      <li class="breadcrumb-item" id="nav-sub_genres"><a href="">Sub Genre</a></li>
+      <li class="breadcrumb-item" id="nav-artists"><a href="">Artists</a></li>
+      <li class="breadcrumb-item" id="nav-albums"><a href="">Albums</a></li>
+    </ol>
+  </nav>
 
-</div>
 
-
-
-
-
-<div id="create">
-  <h1>Add a new album to your collection:</h1>
-  <label>Artist:</label>
-  <input type="text" id="create-artist" value="">
-  <label>Album:</label>
-  <input type="text" id="create-album" value="">
-  <br>
-  <h2>Classify Artist by Genre</h2>
-  <label>Category</label>
-  <input type="text" id="category-input" value="">
-  <label>Genre</label>
-  <input type="text" id="genre-input" value="">
-  <label>Sub-Genre</label>
-  <input type="text" id="subgenre-input" value="">
-  <div id="search-results">
-  <h2>Search Results:</h2>
-  <button type="submit" id="create-button">Search for Album</button>
+<div id="navigator">
+  <div id="categories">
+    cats
   </div>
 
-
-</div>
-
-
-
-
-<br><br>
-<div id="collection">
-  <h1>Your Collection:</h1>
-</div>
-
-<br><br>
-
-<div class="navigator">
-  <div class="G1-Navigator">
-    <h1>G1 Navigator</h1>
-    //Rock, Funk, Etc.
+  <div id="genres">
+    genres
   </div>
 
-  <div class="G2-Navigator">
-    <h1>G2 Navigator // Classic Rock, Dirtbag/Punk, 90s Alt-Rock, Indie Rock</h1>
+  <div id="sub_genres">
+    sub_genres
   </div>
 
-  <div class="G3-Navigator">
-    <h1>G3 Sub-Sub-Genre Navigator //Classic Rock sub-genres:  Granny, AM Radio, British, SF, Southern, British Invasion/Mod, Wierd, Kraut </h1>
+  <div id="artists">
+    arts
+  </div>
+
+  <div id="albums">
+    <h1></h1>
+    albs
+  </div>
+
+  <div id="create">
+    <h1>Add a new album to your collection:</h1>
+    <label>Artist:</label>
+    <input type="text" id="create-artist" value="">
+    <label>Album:</label>
+    <input type="text" id="create-album" value="">
+    <br>
+    <h2>Classify Artist by Genre</h2>
+    <label>Category</label>
+    <input type="text" id="category-input" value="">
+    <label>Genre</label>
+    <input type="text" id="genre-input" value="">
+    <label>Sub-Genre</label>
+    <input type="text" id="subgenre-input" value="">
+    <div id="search-results">
+    <h2>Search Results:</h2>
+    <button type="submit" id="create-button">Search for Album</button>
     </div>
-
-  <div class="G3-Viewer">
-    <h1> G3 Viewer // Show All bands in the sub-genre</h1>
   </div>
 
-  <div class="Artist-Viewer">
-    <h1>Artist Viewer //Show that artists's albums, stats</h1>
-  </div>
+
+
 </div>
+
+
+
+
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script> -->
 
 
 </body>

@@ -1,13 +1,122 @@
 document.addEventListener('DOMContentLoaded', function(event) {
 
-createListeners()
+  Adapter.getCategories()
+
+
+  createListeners()
 });
 
 
 function createListeners() {
   document.getElementById('create-button').addEventListener('click', Album.search)
-
   document.getElementById('search-results').addEventListener('click', addAlbumToCollection)
+
+  document.getElementById('create-button').addEventListener('click', Album.search)
+  document.getElementById('categories').addEventListener('click', Adapter.getGenres)
+  document.getElementById('genres').addEventListener('click', Adapter.getSubGenres)
+  document.getElementById('sub_genres').addEventListener('click', Adapter.getArtists)
+  document.getElementById('artists').addEventListener('click', Adapter.getAlbums)
+
+  document.getElementById('nav-genres').style.display = 'none'
+  document.getElementById('nav-sub_genres').style.display = 'none'
+  document.getElementById('nav-artists').style.display = 'none'
+  document.getElementById('nav-albums').style.display = 'none'
+
+  document.getElementById('nav-bar').addEventListener('click', navBar)
+
+  document.getElementById('genres').style.display = 'none'
+  document.getElementById('sub_genres').style.display = 'none'
+  document.getElementById('artists').style.display = 'none'
+  document.getElementById('albums').style.display = 'none'
+  document.getElementById('create').style.display = 'none'
+
+
+}
+
+function navBar(event){
+  event.preventDefault()
+  if (event.target.localName === 'a') {
+    document.getElementById('categories').style.display = 'none'
+    document.getElementById('genres').style.display = 'none'
+    document.getElementById('sub_genres').style.display = 'none'
+    document.getElementById('artists').style.display = 'none'
+    document.getElementById('albums').style.display = 'none'
+    document.getElementById('create').style.display = 'none'
+
+
+  switch (event.target.parentElement.id) {
+  case 'nav-search':
+
+    document.getElementById('create').style.display = ''
+    document.getElementById('nav-genres').style.display = 'none'
+
+
+    document.getElementById('nav-sub_genres').style.display = 'none'
+
+    document.getElementById('nav-artists').style.display = 'none'
+
+    document.getElementById('nav-albums').style.display = 'none'
+
+
+    document.getElementById('genres').innerHTML =""
+    document.getElementById('sub_genres').innerHTML =""
+    document.getElementById('artists').innerHTML =""
+    document.getElementById('albums').innerHTML =""
+    Genre.all = []
+    SubGenre.all = []
+    Artist.all = []
+    Album.all = []
+
+
+    //deal with changing active element
+    break;
+
+  case 'nav-categories':
+    document.getElementById('categories').style.display = ''
+
+    document.getElementById('nav-genres').style.display = 'none'
+
+    document.getElementById('nav-sub_genres').style.display = 'none'
+
+    document.getElementById('nav-artists').style.display = 'none'
+
+    document.getElementById('nav-albums').style.display = 'none'
+
+
+    document.getElementById('genres').innerHTML =""
+    document.getElementById('sub_genres').innerHTML =""
+    document.getElementById('artists').innerHTML =""
+    document.getElementById('albums').innerHTML =""
+    Genre.all = []
+    SubGenre.all = []
+    Artist.all = []
+    Album.all = []
+
+
+
+
+
+    break;
+  case 'nav-genres':
+    document.getElementById('genres').style.display = ''
+    break;
+  case 'nav-sub_genres':
+    document.getElementById('sub_genres').style.display = ''
+    break;
+  case 'nav-artists':
+    document.getElementById('artists').style.display = ''
+    break;
+  }
+    //iterate through divs.
+
+    //hide all other divs, show relevant div, change nav bar active classes.
+
+
+
+  console.log(event)
+}
+  // document.getElementById('albums').style.display = ''
+  // document.getElementById('artists').style.display = 'none'
 }
 
 function addAlbumToCollection(event) {
