@@ -8,10 +8,14 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 function createListeners() {
-  document.getElementById('search-button').addEventListener('click', Album.search)
-  document.getElementById('search-results').addEventListener('click', addAlbumToCollection)
+  document.getElementById('search-button').addEventListener('click', Search.runSearch)
+  document.getElementById('search-results').addEventListener('click', Search.addAlbum)
+  document.getElementById('category-select').addEventListener('change', Search.selectCategory)
+  document.getElementById('artist-select').addEventListener('change', Search.selectArtist)
+  document.getElementById('genre-select').addEventListener('change', Search.selectGenre)
+  document.getElementById('sub_genre-select').addEventListener('change', Search.selectSubGenre)
 
-  document.getElementById('search-button').addEventListener('click', Album.search)
+
   document.getElementById('categories').addEventListener('click', Adapter.getGenres)
   document.getElementById('genres').addEventListener('click', Adapter.getSubGenres)
   document.getElementById('sub_genres').addEventListener('click', Adapter.getArtists)
@@ -23,6 +27,9 @@ function createListeners() {
   document.getElementById('nav-albums').style.display = 'none'
 
   document.getElementById('nav-bar').addEventListener('click', NavBar.rollBack)
+
+
+  document.getElementById('albums').addEventListener('click', Album.change)
 
   document.getElementById('genres').style.display = 'none'
   document.getElementById('sub_genres').style.display = 'none'
@@ -101,7 +108,7 @@ function neil(event){
   // document.getElementById('artists').style.display = 'none'
 }
 
-function addAlbumToCollection(event) {
+function neiladdAlbumToCollection(event) {
     console.log(event)
 
     let searchArtist = document.getElementById('search-artist').value

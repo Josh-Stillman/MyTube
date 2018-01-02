@@ -9,4 +9,17 @@ class Api::V1::CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     render json: @category, include: :genres
   end
+
+  def create
+    @category= Category.create(category_params)
+    render json: @category
+  end
+end
+
+private
+
+def category_params
+
+  params.permit(:name)
+
 end

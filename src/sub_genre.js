@@ -11,7 +11,7 @@ class SubGenre {
       let subGenreDiv = document.createElement('div')
       subGenreDiv.class = "sub_genre"
       subGenreDiv.id = sub_genre.id
-      subGenreDiv.innerHTML = `<a href="">${sub_genre.name}</a>`
+      subGenreDiv.innerHTML = `<a href="" class="btn btn-primary btn-lg">${sub_genre.name}</a><br><br>`
       document.getElementById('sub_genres').appendChild(subGenreDiv)
     })
     document.getElementById('genres').style.display = 'none'

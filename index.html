@@ -13,6 +13,7 @@
   <script src="src/genre.js"></script>
   <script src="src/category.js"></script>
   <script src="src/nav-bar.js"></script>
+  <script src="src/search.js"></script>
   <script src="src/index.js"></script>
 
 
@@ -32,49 +33,99 @@
 
 
 <div id="navigator">
-  <div id="categories">
-    cats
+<div class="container">
+
+
+  <div id="categories" class="jumbotron">
+
+
+
   </div>
 
-  <div id="genres">
-    genres
+  <div id="genres" class="jumbotron">
+
   </div>
 
-  <div id="sub_genres">
-    sub_genres
+  <div id="sub_genres" class="jumbotron">
+
   </div>
 
-  <div id="artists">
-    arts
+  <div id="artists" class="jumbotron">
+
   </div>
 
-  <div id="albums">
+  <div id="albums" class="jumbotron">
     <h1></h1>
-    albs
+
   </div>
 
-  <div id="search">
+  <div id="search" class="jumbotron">
     <h1>Add a new album to your collection:</h1>
-    <label>Artist:</label>
+
+
+
+
+    <select id="artist-select" name="">
+
+    </select>
+    <div id="new-artist-div">
+    <label for="search-artist">Create new Artist</label>
     <input type="text" id="search-artist" value="">
+    <br>
+    </div>
     <label>Album:</label>
     <input type="text" id="search-album" value="">
+
     <br>
+
+
+    <div id="category-div">
+
     <h2>Classify Artist by Genre</h2>
-    <label>Category</label>
+    <select id="category-select" name="">
+
+    </select>
+
+    <div id="new-category-div">
+
+    <label for="category-input">Create new Category:</label>
     <input type="text" id="category-input" value="">
-    <label>Genre</label>
+    </div>
+    </div>
+    <br>
+
+    <div id="genre-div">
+    <select id="genre-select" name="">
+    </select>
+
+    <div id="new-genre-div">
+    <label for="genre-input">Create Genre:</label>
     <input type="text" id="genre-input" value="">
-    <label>Sub-Genre</label>
-    <input type="text" id="subgenre-input" value="">
+    </div>
+    </div>
+    <br>
+
+    <div id="sub_genre-div">
+    <select id="sub_genre-select" name="">
+
+    </select>
+    <div id="new-sub_genre-div">
+    <label for="sub_genre-input">Create Sub-Genre:</label>
+    <input type="text" id="sub_genre-input" value="">
+    <br>
+    </div>
+    </div>
+
+    <button type="submit" id="search-button">Search for Album</button>
+    <br>
     <div id="search-results">
     <h2>Search Results:</h2>
-    <button type="submit" id="search-button">Search for Album</button>
+
     </div>
   </div>
 
 
-
+</div>
 </div>
 
 

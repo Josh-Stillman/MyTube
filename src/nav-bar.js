@@ -41,6 +41,7 @@ class NavBar {
         $(`#${tree[selectedNav + 1].view}`).hide()
         $(`#nav-categories`).removeClass("active");
         $(`#nav-categories`).html(`<a href="">Categories</a>`);
+        Search.loadSearchPage()
       } else if (selectedNav === 1) {
         i = selectedNav + 1
         $(`#nav-search`).removeClass("active");

@@ -15,8 +15,9 @@ class Genre {
       let genreDiv = document.createElement('div')
       genreDiv.class = "genre"
       genreDiv.id = genre.id
-      genreDiv.innerHTML = `<a href="">${genre.name}</a>`
+      genreDiv.innerHTML = `<a href="" class="btn btn-primary btn-lg">${genre.name}</a><br><br>`
       document.getElementById('genres').appendChild(genreDiv)
+
 
     })
 

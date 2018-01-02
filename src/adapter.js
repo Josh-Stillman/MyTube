@@ -50,8 +50,19 @@ class Adapter {
       .then(resp => resp.json())
       // .then(json => console.log(json))
       .then(json => {json.albums.forEach(function(album){new Album(album)}); document.querySelector('#albums').innerHTML += `<h1>${json.name}</h1>`; Album.displayAlbums(json)})
+      document.querySelector('#albums').dataset.artist_id = artistId
     }
   }
+
+    static renewAlbums(artistId) {
+        document.querySelector('#albums').innerHTML = ""
+        Album.all = []
+        fetch(`http://localhost:3000/api/v1/artists/${artistId}`)
+        .then(resp => resp.json())
+        .then(json => {json.albums.forEach(function(album){new Album(album)}); document.querySelector('#albums').innerHTML += `<h1>${json.name}</h1>`; Album.displayAlbums(json)})
+        document.querySelector('#albums').dataset.artist_id = artistId
+  }
+
 
 
 

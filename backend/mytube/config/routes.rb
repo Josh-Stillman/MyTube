@@ -3,10 +3,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :artists, only: [:index, :show, :update, :delete]
-      resources :categories, only: [:index, :show, :update, :delete]
-      resources :genres, only: [:index, :show, :update, :delete]
-      resources :sub_genres, only: [:index, :show, :update, :delete]
+      resources :artists, only: [:index, :show, :create, :update, :destroy]
+      resources :categories, only: [:index, :show, :create, :update, :destroy]
+      resources :genres, only: [:index, :show, :create, :update, :destroy]
+      resources :sub_genres, only: [:index, :show, :create, :update, :destroy]
+      resources :albums, only: [:index, :show, :create, :update, :destroy]
+
     end
   end
 end

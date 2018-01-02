@@ -11,10 +11,10 @@ class Category {
       let catDiv = document.createElement('div')
       catDiv.class = "category"
       catDiv.id = category.id
-      catDiv.innerHTML = `<a href="">${category.name}</a>`
+      catDiv.innerHTML = `<a href="" class="btn btn-primary btn-lg">${category.name}</a><br><br>`
       document.getElementById('categories').appendChild(catDiv)
-      //create div
-      //append div
+
+
     })
   }
 }

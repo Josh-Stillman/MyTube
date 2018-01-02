@@ -11,7 +11,7 @@ class Artist {
       let artistDiv = document.createElement('div')
       artistDiv.class = "artist"
       artistDiv.id = artist.id
-      artistDiv.innerHTML = `<a href="">${artist.name}</a>`
+      artistDiv.innerHTML = `<a href="" class="btn btn-primary btn-lg">${artist.name}</a><br><br>`
       document.getElementById('artists').appendChild(artistDiv)
       document.getElementById('artists').style.display = ''
       document.getElementById('sub_genres').style.display = 'none'

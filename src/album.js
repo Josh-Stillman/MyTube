@@ -3,6 +3,7 @@ class Album {
     this.id = obj.id
     this.name = obj.name
     this.link = obj.link
+    this.image = obj.image
     this.playCount = obj.play_count
     Album.all.push(this)
   }
@@ -15,9 +16,10 @@ class Album {
       let albumDiv = document.createElement('div')
       albumDiv.class = "album"
       albumDiv.id = album.id
-      albumDiv.innerHTML = `<a href="https://www.youtube.com/watch?v=${album.link}" target = "_blank">${album.name}</a>`
+      albumDiv.innerHTML = `<a href="https://www.youtube.com/watch?v=${album.link}" target = "_blank" class="btn btn-primary btn-lg">${album.name}</a>          <img src="${album.image}" alt=""><a href="" class="btn" data-kind="edit">edit</a><a href="" class="btn" data-kind="delete">delete</a><br><br>`
 
       document.getElementById('albums').appendChild(albumDiv)
+      document.getElementById('albums').innerHTML += "<br>"
 
 
     })
@@ -26,6 +28,36 @@ class Album {
 
     NavBar.update('#nav-artists', '#nav-albums', json.name)
   }
+
+  static change(event){
+    event.preventDefault()
+    if (event.target.dataset.kind === "edit") {
+
+      // fetch(`http://localhost:3000/api/v1/albums`, {
+      //   method: "POST",
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'Accept': 'application/json'
+      //   },
+      //   body: albumBody
+      // })
+      // .then(resp => resp.json())
+      // .then(json => {console.log("success"); console.log(json)})
+      //
+    } else if (event.target.dataset.kind === "delete") {
+
+
+      fetch(`http://localhost:3000/api/v1/albums/${event.target.parentElement.id}`, {
+        method: "DELETE",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      .then(resp => {Adapter.renewAlbums(document.querySelector('#albums').dataset.artist_id)})
+    }
+  }
+
 }
 
 Album.all = []
